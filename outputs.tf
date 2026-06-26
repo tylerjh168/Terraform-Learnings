@@ -1,4 +1,4 @@
-output "file_path" {
-  description = "The path of the generated file"
-  value       = local_file.hello.filename
+output "file_paths" {
+  description = "The paths of the generated files"
+  value       = [for k, r in local_file.hello : r.filename]
 }

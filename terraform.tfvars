@@ -1,2 +1,4 @@
-message  = "Hello from Terraform!"
-filename = "hello2.txt"
+files = {
+	"hello2.txt" = "Hello from Terraform!"
+	"greeting.txt" = "A second dynamic file"
+}

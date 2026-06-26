@@ -10,6 +10,8 @@ terraform {
 provider "local" {}
 
 resource "local_file" "hello" {
-  content  = var.message
-  filename = "${path.cwd}/${var.filename}"
+  for_each = var.files
+
+  content  = each.value
+  filename = "${path.cwd}/${each.key}"
 }

@@ -9,3 +9,12 @@ variable "filename" {
   type        = string
   default     = "hello.txt"
 }
+
+variable "files" {
+  description = "Map of filename => file content to create multiple files"
+  type        = map(string)
+  default = {
+    "hello2.txt" = "Hello from Terraform!"
+    "greeting.txt" = "Hello again, from Terraform!"
+  }
+}
